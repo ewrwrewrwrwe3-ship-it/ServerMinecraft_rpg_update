@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ArsenLOx — Скачать сборку Minecraft</title>
+  <style>
+    :root{
+      --accent: #7ef9a6;
+      --accent-2: #6bd3ff;
+      --text: #e9f8f2;
+      --muted: rgba(233,248,242,0.7);
+      --glass: rgba(0,0,0,0.45);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family:"Poppins",sans-serif;color:var(--text);overflow-x:hidden}
+    body{
+      background:url('https://bananatic-15199.kxcdn.com/ru/photos/bananapedia/8a707f45409d51f11bdf6c36f66c3c44.jpg') no-repeat center/cover;
+      display:flex;align-items:center;justify-content:center;padding:40px;position:relative;
+    }
+    body::after{
+      content:"";position:absolute;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(5px);z-index:0;
+    }
+
+    .card{
+      position:relative;z-index:1;max-width:900px;width:100%;border-radius:20px;
+      background:rgba(20,20,20,0.5);border:1px solid rgba(255,255,255,0.08);
+      box-shadow:0 0 40px rgba(0,0,0,0.7);
+      padding:30px;animation:fadeIn 1.5s ease;
+    }
+    @keyframes fadeIn{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
+    .top{display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
+    .logo{width:110px;height:110px;border-radius:16px;overflow:hidden;box-shadow:0 0 20px rgba(0,0,0,0.5);animation:floatLogo 6s ease-in-out infinite}
+    .logo img{width:100%;height:100%;object-fit:cover}
+    @keyframes floatLogo{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+    .title{text-align:center}
+    .title h1{font-size:28px;color:var(--accent);text-shadow:0 0 15px rgba(126,249,166,0.3)}
+    .title p{font-size:14px;color:var(--muted);margin-top:6px}
+
+    .ipBox{margin:20px auto 0;background:var(--glass);border-radius:14px;display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border:1px solid rgba(255,255,255,0.08);animation:pulse 3s infinite ease-in-out}
+    @keyframes pulse{0%,100%{box-shadow:0 0 8px rgba(107,211,255,0.4)}50%{box-shadow:0 0 16px rgba(126,249,166,0.6)}}
+    .ipText{font-weight:600;font-family:monospace;font-size:15px}
+    .copyBtn{cursor:pointer;border:none;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#022;border-radius:10px;padding:8px 12px;font-weight:700;transition:all .2s ease}
+    .copyBtn:hover{transform:scale(1.05)}
+
+    .content{margin-top:30px;display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start}
+
+    .desc{flex:1;min-width:250px;background:rgba(255,255,255,0.05);border-radius:14px;padding:18px;line-height:1.5;font-size:15px;color:var(--muted);animation:fadeUp 1.2s ease}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+    .actions{display:flex;flex-direction:column;align-items:center;gap:14px;min-width:240px;animation:fadeUp 1.6s ease}
+    .downloadBtn{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#022;border:none;border-radius:14px;padding:15px 30px;font-size:18px;font-weight:700;cursor:pointer;box-shadow:0 0 25px rgba(107,211,255,0.25);transition:all .25s ease;position:relative;overflow:hidden;
+    }
+    .downloadBtn:hover{transform:translateY(-4px);box-shadow:0 0 35px rgba(126,249,166,0.35)}
+    .downloadBtn::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,0.2),transparent 60%);transform:translateX(-100%);transition:transform .8s ease;}
+    .downloadBtn:hover::after{transform:translateX(100%)}
+
+    footer{text-align:center;margin-top:20px;font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="top">
+      <div class="logo"><img src="https://minecraft-inside.ru/uploads/files/2024-08/177030_66b323e326705.png" alt="logo"></div>
+      <div class="title">
+        <h1>Сборка для сервера ArsenLOx</h1>
+        <p>Скачай сборку и подключайся к серверу прямо сейчас!</p>
+      </div>
+    </div>
+
+    <div class="ipBox">
+      <div class="ipText" id="serverIp">ArsenLOx.aternos.me:39549</div>
+      <button class="copyBtn" id="copyBtn">📋 Копировать</button>
+    </div>
+
+    <div class="content">
+      <div class="desc">
+        <strong>Описание:</strong><br> Уникальная модифицированная сборка Minecraft для сервера <b>ArsenLOx</b>. Просто скачай архив, распакуй его в папку <i>mods</i> и запускай игру! В сборке только нужные моды для оптимальной игры без лагов.
+      </div>
+
+      <div class="actions">
+        <a href="https://www.dropbox.com/scl/fi/9lrrod5vdvdtq2ja9vmkk/mods.zip?rlkey=rkzlqzbjndacvnkj1ziwzz1a7&st=pssgyvtv&dl=1" target="_blank" rel="noopener noreferrer">
+          <button class="downloadBtn">⤓ Скачать сборку</button>
+        </a>
+      </div>
+    </div>
+
+    <footer>© 2025 ArsenLOx Server — Всё сделано с любовью к Арсену ❤️</footer>
+  </div>
+
+  <script>
+    const copyBtn = document.getElementById('copyBtn');
+    const serverIp = document.getElementById('serverIp');
+    copyBtn.addEventListener('click', async ()=>{
+      try{
+        await navigator.clipboard.writeText(serverIp.textContent.trim());
+        copyBtn.textContent='✓ Скопировано';
+        copyBtn.style.background='linear-gradient(90deg,#6bd3ff,#7ef9a6)';
+        setTimeout(()=>{copyBtn.textContent='📋 Копировать';copyBtn.style.background='linear-gradient(90deg,var(--accent),var(--accent-2))';},2000);
+      }catch(err){alert('Не удалось скопировать IP. Скопируйте вручную.');}
+    });
+  </script>
+</body>
+</html>
